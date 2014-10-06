@@ -21,6 +21,7 @@ Thumbs.db
 
 # Gradle local files
 .gradle/
+build/
 
 # Maven
 target/
