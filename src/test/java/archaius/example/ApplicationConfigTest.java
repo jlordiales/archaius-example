@@ -21,4 +21,11 @@ public class ApplicationConfigTest {
 
         assertThat(property, is("default message"));
     }
+
+    @Test
+    public void shouldReadCascadeConfigurationFiles() {
+        String property = appConfig.getStringProperty("cascade.property", "not found");
+
+        assertThat(property, is("cascade value"));
+    }
 }
