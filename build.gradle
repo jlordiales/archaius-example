@@ -9,5 +9,10 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'org.springframework', name: 'spring-test', version: '4.1.0.RELEASE'
     compile group: 'com.netflix.archaius', name: 'archaius-core', version: '0.6.2'
+    compile group: 'com.h2database', name: 'h2', version: '1.4.181'
+    compile group: 'org.springframework', name: 'spring-core', version: '4.1.0.RELEASE'
+    compile group: 'org.springframework', name: 'spring-context', version: '4.1.0.RELEASE'
+    compile group: 'org.springframework', name: 'spring-jdbc', version: '4.1.0.RELEASE'
 }

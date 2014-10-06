@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="archaius.example"/>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.SingleConnectionDataSource"
+          destroy-method="destroy">
+        <property name="driverClassName" value="org.h2.Driver"/>
+        <property name="url"
+                  value="jdbc:h2:mem:test_archaius;AUTOCOMMIT=ON;DB_CLOSE_DELAY=-1;MODE=PostgreSQL;INIT=RUNSCRIPT FROM 'classpath:init_script.sql'"/>
+        <property name="username" value="sa"/>
+        <property name="password" value=""/>
+        <property name="suppressClose" value="true"/>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+</beans>
