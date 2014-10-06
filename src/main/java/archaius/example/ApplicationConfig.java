@@ -97,7 +97,6 @@ public class ApplicationConfig extends Thread {
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-
         }
     }
 }
