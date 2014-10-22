@@ -74,7 +74,7 @@ public class ApplicationConfig extends Thread {
             PolledConfigurationSource source = new JDBCConfigurationSource(dataSource,
                 "select distinct property_key, property_value from properties", "property_key", "property_value");
             DynamicConfiguration configuration = new DynamicConfiguration(source,
-                new FixedDelayPollingScheduler(100, 1000, true));
+                new FixedDelayPollingScheduler(0, 100000, true));
 
             ConfigurationManager.install(configuration);
             return configuration;
